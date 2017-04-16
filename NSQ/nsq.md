@@ -20,7 +20,7 @@ curl -d 'hello world 1' 'http://127.0.0.1:4151/pub?topic=test'
 
 
 # nsqadmin
-- url: http://x.x.x.x:4171
+- url: http://127.0.0.1:4171
 ```
 $ docker run -d --name nsqadmin -p 4171:4171 nsqio/nsq:v1.0.0-compat /nsqadmin  --lookupd-http-address=127.0.0.1:4161
 ```
