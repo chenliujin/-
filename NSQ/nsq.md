@@ -34,5 +34,6 @@ $ docker run -d --name nsq_to_file2 -v /data/t2:/data/t2 nsqio/nsq:v1.0.0-compat
 
 
 # 参考文献
+- [NSQ 官网](http://nsq.io/)
 - [NSQ的消息订阅发布测试](http://www.cnblogs.com/forrestsun/p/3892710.html)
 - [NSQ 指南](http://udn.yyuap.com/doc/wiki/project/nsq-guide/docker.html)
