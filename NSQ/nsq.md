@@ -13,16 +13,17 @@ $ curl x.x.x.x:4161/ping
 $ docker run -d --restart=always --name nsqd -v /data/nsqd:/data/nsqd -p 4150:4150 -p 4151:4151 nsqio/nsq:v1.0.0-compat /nsqd --broadcast-address=x.x.x.x --lookupd-tcp-address=x.x.x.x:4160 --data-path=/data/nsqd
 ```
 
-### Test
-```
-curl -d 'hello world 1' 'http://x.x.x.x:4151/pub?topic=test'
-```
-
 
 # nsqadmin
 - url: http://x.x.x.x:4171
 ```
 $ docker run -d --restart=always --name nsqadmin -p 4171:4171 nsqio/nsq:v1.0.0-compat /nsqadmin  --lookupd-http-address=x.x.x.x:4161
+```
+
+
+# Topic
+```
+curl -d 'hello world 1' 'http://x.x.x.x:4151/pub?topic=test'
 ```
 
 
