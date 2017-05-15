@@ -1,6 +1,6 @@
 # nsqlookupd
 ```
-$ docker run -d --restart always --name lookupd -p 4160:4160 -p 4161:4161 nsqio/nsq:v1.0.0-compat /nsqlookupd
+$ docker run -d --restart=always --name lookupd -p 4160:4160 -p 4161:4161 nsqio/nsq:v1.0.0-compat /nsqlookupd
 ```
 
 ### Test
@@ -10,7 +10,7 @@ $ curl 127.0.0.1:4161/ping
 
 # nsq
 ```
-$ docker run -d --restart always --name nsqd -v /data/nsqd:/data/nsqd -p 4150:4150 -p 4151:4151 nsqio/nsq:v1.0.0-compat /nsqd --broadcast-address=127.0.0.1  --lookupd-tcp-address=127.0.0.1:4160 --data-path=/data/nsqd
+$ docker run -d --restart=always --name nsqd -v /data/nsqd:/data/nsqd -p 4150:4150 -p 4151:4151 nsqio/nsq:v1.0.0-compat /nsqd --broadcast-address=127.0.0.1  --lookupd-tcp-address=127.0.0.1:4160 --data-path=/data/nsqd
 ```
 
 ### Test
@@ -22,7 +22,7 @@ curl -d 'hello world 1' 'http://127.0.0.1:4151/pub?topic=test'
 # nsqadmin
 - url: http://127.0.0.1:4171
 ```
-$ docker run -d --restart always --name nsqadmin -p 4171:4171 nsqio/nsq:v1.0.0-compat /nsqadmin  --lookupd-http-address=127.0.0.1:4161
+$ docker run -d --restart=always --name nsqadmin -p 4171:4171 nsqio/nsq:v1.0.0-compat /nsqadmin  --lookupd-http-address=127.0.0.1:4161
 ```
 
 
