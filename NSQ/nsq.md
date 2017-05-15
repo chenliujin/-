@@ -41,3 +41,4 @@ $ docker run -d --name nsq_to_file2 -v /data/t2:/data/t2 nsqio/nsq:v1.0.0-compat
 - [NSQ的消息订阅发布测试](http://www.cnblogs.com/forrestsun/p/3892710.html)
 - [NSQ 指南](http://udn.yyuap.com/doc/wiki/project/nsq-guide/docker.html)
 - [NSQ 指南](http://wiki.jikexueyuan.com/project/nsq-guide/internals.html)
+- [NSQ：分布式的实时消息平台](http://www.infoq.com/cn/news/2015/02/nsq-distributed-message-platform)
