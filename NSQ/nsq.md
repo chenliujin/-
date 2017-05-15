@@ -28,6 +28,7 @@ curl -d 'hello world 1' 'http://x.x.x.x:4151/pub?topic=test'
 
 
 # Channel
+一个通道接收到一个话题中所有消息的副本，启用组播方式的传输，使消息同时在每个通道的所有订阅用户间分发，从而实现负载平衡。
 ```
 $ docker run -d --name nsq_to_file1 -v /data/t1:/data/t1 nsqio/nsq:v1.0.0-compat /nsq_to_file --topic=test --channel=t1 --output-dir=/data/t1 --nsqd-tcp-address=x.x.x.x:4150
 $ docker run -d --name nsq_to_file2 -v /data/t2:/data/t2 nsqio/nsq:v1.0.0-compat /nsq_to_file --topic=test --channel=t2 --output-dir=/data/t2 --nsqd-tcp-address=x.x.x.x:4150
