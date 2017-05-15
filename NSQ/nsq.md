@@ -5,31 +5,31 @@ $ docker run -d --restart=always --name lookupd -p 4160:4160 -p 4161:4161 nsqio/
 
 ### Test
 ```
-$ curl 127.0.0.1:4161/ping
+$ curl x.x.x.x:4161/ping
 ```
 
 # nsq
 ```
-$ docker run -d --restart=always --name nsqd -v /data/nsqd:/data/nsqd -p 4150:4150 -p 4151:4151 nsqio/nsq:v1.0.0-compat /nsqd --broadcast-address=127.0.0.1  --lookupd-tcp-address=127.0.0.1:4160 --data-path=/data/nsqd
+$ docker run -d --restart=always --name nsqd -v /data/nsqd:/data/nsqd -p 4150:4150 -p 4151:4151 nsqio/nsq:v1.0.0-compat /nsqd --broadcast-address=x.x.x.x --lookupd-tcp-address=x.x.x.x:4160 --data-path=/data/nsqd
 ```
 
 ### Test
 ```
-curl -d 'hello world 1' 'http://127.0.0.1:4151/pub?topic=test'
+curl -d 'hello world 1' 'http://x.x.x.x:4151/pub?topic=test'
 ```
 
 
 # nsqadmin
-- url: http://127.0.0.1:4171
+- url: http://x.x.x.x:4171
 ```
-$ docker run -d --restart=always --name nsqadmin -p 4171:4171 nsqio/nsq:v1.0.0-compat /nsqadmin  --lookupd-http-address=127.0.0.1:4161
+$ docker run -d --restart=always --name nsqadmin -p 4171:4171 nsqio/nsq:v1.0.0-compat /nsqadmin  --lookupd-http-address=x.x.x.x:4161
 ```
 
 
 # Channel
 ```
-$ docker run -d --name nsq_to_file1 -v /data/t1:/data/t1 nsqio/nsq:v1.0.0-compat /nsq_to_file --topic=test --channel=t1 --output-dir=/data/t1 --nsqd-tcp-address=127.0.0.1:4150
-$ docker run -d --name nsq_to_file2 -v /data/t2:/data/t2 nsqio/nsq:v1.0.0-compat /nsq_to_file --topic=test --channel=t2 --output-dir=/data/t2 --nsqd-tcp-address=127.0.0.1:4150
+$ docker run -d --name nsq_to_file1 -v /data/t1:/data/t1 nsqio/nsq:v1.0.0-compat /nsq_to_file --topic=test --channel=t1 --output-dir=/data/t1 --nsqd-tcp-address=x.x.x.x:4150
+$ docker run -d --name nsq_to_file2 -v /data/t2:/data/t2 nsqio/nsq:v1.0.0-compat /nsq_to_file --topic=test --channel=t2 --output-dir=/data/t2 --nsqd-tcp-address=x.x.x.x:4150
 ```
 
 
